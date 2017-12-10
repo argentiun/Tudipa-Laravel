@@ -1,19 +1,19 @@
 /*!
-    
+
  =========================================================
  * Material Kit - v1.1.1.0
  =========================================================
- 
+
  * Product Page: http://www.creative-tim.com/product/material-kit
  * Copyright 2017 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/timcreative/material-kit/blob/master/LICENSE.md)
- 
+
  =========================================================
- 
+
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
+
  */
- 
+
 /* ANIMATION */
 /* SHADOWS */
 /* Shadows (from mdl http://www.getmdl.io/) */
@@ -1435,7 +1435,7 @@ output {
 }
 .form-group.is-focused .form-control {
   outline: none;
-  background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+  background-image: linear-gradient(#2196F3, #2196F3), linear-gradient(#D2D2D2, #D2D2D2);
   background-size: 100% 2px, 100% 1px;
   box-shadow: none;
   transition-duration: 0.3s;
@@ -1964,7 +1964,7 @@ legend {
   height: 50px;
   line-height: 30px;
   color: inherit;
-  padding: 10px 15px;
+  padding: 0px 15px;
 }
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: inherit;
@@ -2347,7 +2347,7 @@ legend {
   }
   .navbar .navbar-brand {
     height: 50px;
-    padding: 10px 15px;
+    padding: 0px 15px;
   }
   .navbar .navbar-nav > li > a {
     padding-top: 15px;
@@ -2901,7 +2901,7 @@ h2.title {
   box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: -40px;
+  margin-top: 20px;
   padding: 20px 0;
 }
 .card-signup .text-divider {
