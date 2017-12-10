@@ -22,7 +22,7 @@
                 <span class="input-group-addon">
                   <i class="material-icons">email</i>
                 </span>
-                <input id="email" type="email" placeholder="Email..." class="form-control" name="email"
+                <input id="email" type="email" placeholder="Correo Electrónico" class="form-control" name="email"
                 value="{{ old('email') }}" required autofocus>
               </div>
 
@@ -30,7 +30,7 @@
                 <span class="input-group-addon">
                   <i class="material-icons">lock_outline</i>
                 </span>
-                <input placeholder="Password..." id="password" type="password" class="form-control"
+                <input placeholder="Contraseña" id="password" type="password" class="form-control"
                 name="password" required />
               </div>
 

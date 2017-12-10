@@ -33,11 +33,16 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a class="navbar-brand logo" href="{{ url('/') }}" style=""> <img style="width: 180px;" src="{{ asset ('img/logo.svg') }}" alt=""> </a>
+        		<a class="navbar-brand logo" href="{{ url('/') }}" style=""> <img style="width: 154px;" src="{{ asset ('img/logo6.svg') }}" alt=""> </a>
         	</div>
 
         	<div class="collapse navbar-collapse" id="navigation-example">
         		<ul class="nav navbar-nav navbar-right">
+
+							<li><a href="{{ ('/') }}">Inicio</a></li>
+							<li><a href="#">Cursos</a></li>
+							<li><a href="#">Enseñá</a></li>
+							<li><a href="#">Faq</a></li>
               @guest
                   <li><a href="{{ route('login') }}">Ingresar</a></li>
                   <li><a href="{{ route('register') }}">Registrase</a></li>
@@ -52,7 +57,7 @@
                               <a href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
-                                  Logout
+                                  Cerrar Sesión
                               </a>
 
                               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
