@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Bienvenido a Tudipa - Estudia a tu ritmo')
+@section('title', '')
 
 @section('body-class', 'landing-page')
 

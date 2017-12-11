@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Registrarse en Tudipa')
+
 @section('body-class', 'signup-page')
 
 @section('content')
