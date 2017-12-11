@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class TestController extends Controller
 {
     public function welcome ()
     {
-      $products = Product::all();
+      $products = Product::all(); // Nos va a tirar error en esta linea si no la llamamos arriba desde Use App\Product
       return view('welcome')->with(compact('products')); // despues de -> lo que hace es crear un arreglo asociativo a partir de los parametros que se le indiquen. Con esto entonces, pasamos tanto parametros como variables tengamos.
       // Esto de arriba, si tengo mas variables, ademas de la de products puedo seguir agrendo mas ('products', var1, var2, etc) y seguiria crando el arreglo gracias a la funcion compact.
 
