@@ -99,7 +99,7 @@
 
     </div>
   </div>
-
+  {{ $products->links() }}
   </div>
 
 
@@ -131,8 +131,8 @@
 
                       <div class="row">
                           <div class="col-md-4 col-md-offset-4 text-center">
-                              <button class="btn btn-primary btn-raised">
-              Send Message
+                              <button class="btn btn-success btn-raised">
+              Enviar
             </button>
                           </div>
                       </div>

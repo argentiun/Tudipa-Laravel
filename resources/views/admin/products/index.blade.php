@@ -1,146 +1,61 @@
 @extends('layouts.app')
 
-@section('title', '')
+@section('title', 'Listado de Productos - Tudipa')
 
-@section('body-class', 'landing-page')
+@section('body-class', 'product-page')
 
 @section('content')
-<div class="header header-filter" style="background-image: url('{{ ('img/fondo-1.jpg') }}');">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-              <h1 class="title">Estudia desde la comodidad de tu casa</h1>
-              <h4>¡Los cursos que querias hacer, todos en un solo lugar!</h4>
-              <br/>
-              <h4>Tudipa es una amplia comunidad dedicada a la enseñanza y aprendizaje de cursos online. Nuclea profesionales y alumnos en un solo sitio,
-              donde se hace un lugar ameno para estudiar y compartir conocimientos con los demás.</h4>
-              <br/>
-              <a href="{{ route('register') }}" class="btn btn-info btn-raised btn-lg">
-                Quiero estudiar
-              </a>
-
-              <a href="{{ route('register') }}" class="btn btn-info btn-raised btn-lg">
-                Quiero Instruir
-              </a>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="main main-raised" style="margin: 0px 0px 0px; border-radius: 0px;">
 <div class="container">
-  <div class="section text-center section-landing">
-          <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                  <h2 class="title">¡Elegí tu proximo oficio!</h2>
-                  <h4 class="description">Tenemos profesionales dispuestos a ayudarte en todo momento mientras avanzas con tu curso</h4>
-                  <h5 class="description">En Tudipa creemos fuertemente en el compromiso, y es por ello que seleccionamos y analizamos cada
-                    curso propuesto por los instructores para poder brindarte la mejor experiencia en el aprendizaje.</h5>
-              </div>
-          </div>
 
-          <div class="features">
-						<div class="row">
-                <div class="col-md-4">
-								<div class="info">
-									<div class="icon icon-primary">
-										<i class="material-icons">chat</i>
-									</div>
-									<h4 class="info-title">Atención 24/7</h4>
-									<p>Nuestro equipo esta en linea 24/7 para atender tus inquietudes rapidamente.</p>
-								</div>
-                </div>
+  <div class="section text-center" style="padding: 100px 0;">
 
-                <div class="col-md-4">
-								<div class="info">
-									<div class="icon icon-success">
-										<i class="material-icons">verified_user</i>
-									</div>
-									<h4 class="info-title">Pagá y cobrá con seguridad</h4>
-									<p>Tenemos lo mejor para que tus datos de cobros y pagos esten siempre protegidos.</p>
-								</div>
-                </div>
-
-                <div class="col-md-4">
-								<div class="info">
-									<div class="icon icon-danger">
-										<i class="material-icons">fingerprint</i>
-									</div>
-									<h4 class="info-title">Información segura</h4>
-									<p>Todos tus datos personales, y cursos que tomes o instruyas estan respaldados y protegidos para que exista ningun incoveniente.</p>
-								</div>
-                </div>
-              </div>
-					</div>
-
-  </div>
-
-
-
-  <div class="section text-center">
-
-    <h2 class="title">Cursos Disponibles</h2>
+    <h2 class="title">Listado de Cursos Disponibles</h2>
 
   <div class="team">
     <div class="row">
-      @foreach ($products as $product)
-      <div class="col-md-4">
-          <div class="team-player">
-              <img src="{{ $product->images()->first()->image }}" alt="Thumbnail Image" class="img-raised img-circle">
-                <h4 class="title">{{ $product->name }} <br />
-                  <small class="text-muted">{{ $product->category->name }}</small>
-                </h4>
-               <p class="description">{{ $product->description }}</p>
-          </div>
-      </div>
-
-      @endforeach
-
+      <a href="{{ ('/admin/products/create') }}" class="btn btn-success btn-round" style="margin-bottom: 100px;">Crear Curso</a>
+      <br/>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th class="text-center">#</th>
+                  <th class="col-md-2 text-center">Nombre</th>
+                  <th class="col-md-3 text-center">Descripción</th>
+                  <th class="text-center">Categorias</th>
+                  <th class="text-center">Precio</th>
+                  <th class="col-md-2 text-center">Opciones</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach ($products as $product)
+              <tr>
+                  <td class="text-center">{{ $product->id }}</td>
+                  <td class="text-center">{{ $product->name }}</td>
+                  <td class="text-center">{{ $product->description }}</td>
+                  <td class="text-center">{{ $product->category ? $product->category->name : 'General' }}</td>
+                  <td class="text-center">$ {{ $product->price }}</td>
+                  <td class="td-actions text-center">
+                      <button type="button" rel="tooltip" title="Ver curso" class="btn btn-info btn-simple btn-xs">
+                          <i class="fa fa-info"></i>
+                      </button>
+                      <button type="button" rel="tooltip" title="Editar curso" class="btn btn-success btn-simple btn-xs">
+                          <i class="fa fa-edit"></i>
+                      </button>
+                      <button type="button" rel="tooltip" title="Eliminar curso" class="btn btn-danger btn-simple btn-xs">
+                          <i class="fa fa-times"></i>
+                      </button>
+                  </td>
+              </tr>
+              @endforeach
+          </tbody>
+        </table>
+        {{ $products->links() }}
     </div>
   </div>
 
   </div>
 
-
-    <div class="section landing-section">
-          <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                  <h2 class="text-center title">Contacto</h2>
-      <h4 class="text-center description">Si necesita ayuda, escribanos su mensaje. Nuestro equipo lo atenderá a la brevedad, estamos a su completa disposición.</h4>
-                  <form class="contact-form">
-                      <div class="row">
-                          <div class="col-md-6">
-            <div class="form-group label-floating">
-              <label class="control-label">Nombre</label>
-              <input type="email" class="form-control">
-            </div>
-                          </div>
-                          <div class="col-md-6">
-            <div class="form-group label-floating">
-              <label class="control-label">Correo electrónico</label>
-              <input type="email" class="form-control">
-            </div>
-                          </div>
-                      </div>
-
-        <div class="form-group label-floating">
-          <label class="control-label">Mensaje</label>
-          <textarea class="form-control" rows="4"></textarea>
-        </div>
-
-                      <div class="row">
-                          <div class="col-md-4 col-md-offset-4 text-center">
-                              <button class="btn btn-primary btn-raised">
-              Send Message
-            </button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
-          </div>
-
-      </div>
   </div>
 
 </div>
