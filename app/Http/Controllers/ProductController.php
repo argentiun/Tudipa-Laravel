@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\ProductImage;
 
 class ProductController extends Controller
 {
@@ -20,6 +21,15 @@ class ProductController extends Controller
 
     public function store(Request $request) // Va a registrar el nuevo producto a la base de datos
     {
+      // Validar
+      $rules = [
+        'name' => 'required|min:3'
+        'description' => 'required|'
+        'price' => 'required'
+
+      ];
+      $this->validate($request $rules)
+
       // dd($request->all());
       $product = new Product();
       $product->name = $request->input('name');
@@ -31,4 +41,39 @@ class ProductController extends Controller
       return redirect('/admin/products'); // Con redirect, cuando se termine de insertar el nuevo curso, nos va a redireccionar a la ruta que le indiquemos.
 
     }
+
+    public function edit($id)
+    {
+      // return "Mostrar aca el formulario de edicion $id";
+      $product = Product::find($id);
+      return view('admin.products.edit')->with(compact('product'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+      $product = Product::find($id);
+      $product->name = $request->input('name');
+      $product->description = $request->input('description');
+      $product->price = $request->input('price');
+      $product->long_description = $request->input('long_description');
+      $product->save(); // Guardara en el existente
+
+      return redirect('/admin/products');
+
+    }
+
+    public function destroy($id)
+    {
+
+
+      ProductImage::where('product_id', $id)->delete();
+
+      $product = Product::find($id);
+      $product->delete(); // DELETE
+
+      return back();
+
+    }
+
 }

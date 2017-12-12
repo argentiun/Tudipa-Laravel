@@ -19,6 +19,11 @@ Route::get('/admin/products', 'ProductController@index'); // LISTADO. Esta ruta 
 Route::get('/admin/products/create', 'ProductController@create'); // FORMULARIO. esta ruta va a permitir crear nuevos productos. Para que solo los administradores puedan hacerlo. Usando el metodo create.
 Route::post('/admin/products', 'ProductController@store'); // REGISTRAR. Con este va a persistir en la base de datos.
 
+Route::get('/admin/products/{id}/edit', 'ProductController@edit'); //Formulario de edicion
+Route::post('/admin/products/{id}/edit', 'ProductController@update'); // Actualizar los datos
+
+Route::delete('/admin/products/{id}', 'ProductController@destroy');
+
 //CR
 
 //UD

@@ -36,15 +36,24 @@
                   <td class="text-center">{{ $product->category ? $product->category->name : 'General' }}</td>
                   <td class="text-center">$ {{ $product->price }}</td>
                   <td class="td-actions text-center">
-                      <button type="button" rel="tooltip" title="Ver curso" class="btn btn-info btn-simple btn-xs">
-                          <i class="fa fa-info"></i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Editar curso" class="btn btn-success btn-simple btn-xs">
-                          <i class="fa fa-edit"></i>
-                      </button>
-                      <button type="button" rel="tooltip" title="Eliminar curso" class="btn btn-danger btn-simple btn-xs">
-                          <i class="fa fa-times"></i>
-                      </button>
+                      <form class="" action="{{ url('/admin/products/'.$product->id) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
+                        <a href="#" type="button" rel="tooltip" title="Ver curso" class="btn btn-info btn-simple btn-xs">
+                            <i class="fa fa-info"></i>
+                        </a>
+
+                        <a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar curso" class="btn btn-success btn-simple btn-xs">
+                            <i class="fa fa-edit"></i>
+                        </a>
+
+                        <button type="submit" rel="tooltip" title="Eliminar curso" class="btn btn-danger btn-simple btn-xs">
+                            <i class="fa fa-times"></i>
+                        </button>
+                      </form>
+
+
                   </td>
               </tr>
               @endforeach
