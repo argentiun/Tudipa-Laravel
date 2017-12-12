@@ -18,7 +18,7 @@ class AdminMiddleware
         // if (!auth()->check()) {
         //   return redirect('/login');
         // }
-        if (!auth()->user()->admin) {
+        if (!auth()->user()->teacher) {
           return redirect('/');
         }
         return $next($request);

@@ -11,7 +11,7 @@
 
       <div class="section">
 
-        <h2 class="title text-center" style="padding: 10px 0;">Registrar Nuevos Cursos</h2>
+        <h2 class="title text-center" style="padding: 10px 0;">Registrar Nuevo Curso</h2>
 
         @if ($errors->any())
                 <div class="alert alert-danger">
