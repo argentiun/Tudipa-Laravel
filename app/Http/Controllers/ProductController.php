@@ -23,12 +23,23 @@ class ProductController extends Controller
     {
       // Validar
       $rules = [
-        'name' => 'required|min:3'
-        'description' => 'required|'
-        'price' => 'required'
+        'name' => 'required|min:3',
+        'description' => 'required|max:200',
+        'price' => 'required|numeric|min:0'
 
       ];
-      $this->validate($request $rules)
+
+      $messages = [
+            'name.required' => 'Ingresa el nombre del curso.',
+            'name.min' => 'El nombre del curso tiene que tener 3 caracteres.',
+            'description.required' => 'Ingresa la descripción corta.',
+            'description.max' => 'La descripción corta puede tener solo 200 caracteres.',
+            'price.required' => 'Ingresa un precio para el curso.',
+            'price.numeric' => 'Ingresa un precio valido.',
+            'price.min' => 'No podes ingresar valores negativos.'
+        ];
+
+      $this->validate($request, $rules, $messages);
 
       // dd($request->all());
       $product = new Product();
@@ -51,6 +62,24 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+      $rules = [
+        'name' => 'required|min:3',
+        'description' => 'required|max:200',
+        'price' => 'required|numeric|min:0'
+
+      ];
+
+      $messages = [
+            'name.required' => 'Ingresa el nombre del curso.',
+            'name.min' => 'El nombre del curso tiene que tener 3 caracteres.',
+            'description.required' => 'Ingresa la descripción corta.',
+            'description.max' => 'La descripción corta puede tener solo 200 caracteres.',
+            'price.required' => 'Ingresa un precio para el curso.',
+            'price.numeric' => 'Ingresa un precio valido.',
+            'price.min' => 'No podes ingresar valores negativos.'
+        ];
+
+      $this->validate($request, $rules, $messages);
 
       $product = Product::find($id);
       $product->name = $request->input('name');

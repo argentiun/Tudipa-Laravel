@@ -13,6 +13,16 @@
 
         <h2 class="title text-center" style="padding: 10px 0;">Editar Curso</h2>
 
+        @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+        @endif
+
         <form class="" action="{{ url('/admin/products/'.$product->id.'/edit') }}" method="post">
           {{ csrf_field() }}
 
@@ -20,14 +30,14 @@
             <div class="col-sm-6">
               <div class="form-group label-floating">
                 <label class="control-label">Nombre del curso</label>
-                <input type="text" class="form-control" name="name" value="{{ $product->name }}">
+                <input type="text" class="form-control" name="name" value="{{ old('name', $product->name) }}">
               </div>
             </div>
 
             <div class="col-sm-6">
             	<div class="form-group label-floating">
             		<label class="control-label">Precio del Curso</label>
-            		<input type="number" step="0.01"class="form-control" name="price" value="{{ $product->price }}">
+            		<input type="number" step="0.01"class="form-control" name="price" value="{{ old('price', $product->price) }}">
             	</div>
             </div>
           </div>
@@ -36,14 +46,12 @@
 
             <div class="form-group label-floating">
               <label class="control-label">Descripción Corta</label>
-              <input type="text" class="form-control" name="description" value="{{ $product->description }}">
+              <input type="text" class="form-control" name="description" value="{{ old('description', $product->description) }}">
             </div>
 
 
 
-          <textarea class="form-control" placeholder="Descripción Larga" rows="5" name="long_description">
-            {{ $product->long_description }}
-          </textarea>
+          <textarea class="form-control" placeholder="Descripción larga" rows="5" name="long_description">{{ old('long_description', $product->long_description) }}</textarea>
 
           <div class="text-center">
             <button class="btn btn-success text-center">Guardar</button>

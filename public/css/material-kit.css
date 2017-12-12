@@ -1793,7 +1793,9 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   color: #f44336;
   opacity: 1;
 }
-
+.pagination {
+      margin: 50px 0;
+}
 .pagination > li > a,
 .pagination > li > span {
   border: 0;
