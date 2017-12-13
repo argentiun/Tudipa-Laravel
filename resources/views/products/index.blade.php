@@ -10,11 +10,11 @@
 
   <div class="section text-center" style="padding: 100px 0;">
 
-    <h2 class="title">Listado de Cursos Disponibles</h2>
+    <h2 class="title">Listado de Cursos Creados</h2>
 
   <div class="team">
     <div class="row">
-      <a href="{{ ('/admin/products/create') }}" class="btn btn-success btn-round" style="margin-bottom: 100px;">Crear Curso</a>
+      <a href="{{ ('/products/create') }}" class="btn btn-success btn-round" style="margin-bottom: 100px;">Crear Curso</a>
       <br/>
       <table class="table">
           <thead>
@@ -36,7 +36,7 @@
                   <td class="text-center">{{ $product->category ? $product->category->name : 'General' }}</td>
                   <td class="text-center">$ {{ $product->price }}</td>
                   <td class="td-actions text-center">
-                      <form class="" action="{{ url('/admin/products/'.$product->id) }}" method="post">
+                      <form class="" action="{{ url('/products/'.$product->id) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
@@ -44,7 +44,7 @@
                             <i class="fa fa-info"></i>
                         </a>
 
-                        <a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar curso" class="btn btn-success btn-simple btn-xs">
+                        <a href="{{ url('/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar curso" class="btn btn-success btn-simple btn-xs">
                             <i class="fa fa-edit"></i>
                         </a>
 

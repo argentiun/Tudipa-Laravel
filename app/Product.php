@@ -26,4 +26,18 @@ class Product extends Model
       return $this->hasMany(ProductImage::class); // Aca estamos diciendo que un producto pertenece a una categoria
     }
 
+    // compradores del producto
+    public function buyers() {
+      return $this->belongsToMany(User::class, 'users_products');
+    }
+
+    // determina si un curso esta comprado
+    public function isBought() {
+      $id = $this->id;
+      $products = auth()->user()->productsBought;
+      foreach ($products as $product) {
+        if ($product->id == $this->id) return true;
+      }
+      return false;
+    }
 }

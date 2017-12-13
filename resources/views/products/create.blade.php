@@ -23,7 +23,7 @@
                 </div>
         @endif
 
-        <form class="" action="{{ url('/admin/products') }}" method="post">
+        <form class="" action="{{ url('/products') }}" method="post">
           {{ csrf_field() }}
 
           <div class="row">
@@ -53,9 +53,15 @@
 
           <textarea class="form-control" placeholder="Descripción larga" rows="5" name="long_description">{{ old('long_description') }}</textarea>
 
+          <div class="form-group label-floating">
+            <label class="control-label">ID del video de Youtube</label>
+            <input type="text" class="form-control" name="video" value="{{ old('video') }}">
+          </div>
+
+
           <div class="text-center">
             <button class="btn btn-success text-center">Crear Curso</button>
-            <a href="{{ url('/admin/products') }}" class="btn btn-danger text-center">Cancelar</a>
+            <a href="{{ url('/products') }}" class="btn btn-danger text-center">Cancelar</a>
           </div>
 
         </form>

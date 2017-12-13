@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-              
+
               <h1 class="title">Estudia desde la comodidad de tu casa</h1>
               <h4>¡Los cursos que querias hacer, todos en un solo lugar!</h4>
               <br/>
@@ -93,6 +93,7 @@
                   <small class="text-muted">{{ $product->category->name }}</small>
                 </h4>
                <p class="description">{{ $product->description }}</p>
+               <a class="btn" href="/products/view/{{ $product->id }}">Ver</a>
           </div>
       </div>
 

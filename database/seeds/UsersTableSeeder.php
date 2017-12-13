@@ -14,13 +14,18 @@ class UsersTableSeeder extends Seeder
      //Con esto crearemos un usuario automanticamente.
     public function run()
     {
-        User::create([
-          'name' => 'Pablo',
+        User::create(
+          ['name' => 'Pablo',
           'email' => 'pablo@gmail.com',
-          'password' => bcrypt('Eddie1557'),
-          'admin' => true,
-          'teacher' => false
-        ]);
+          'password' => bcrypt('asdfasdf'),
+          'admin' => true]
+        );
+        User::create(
+          ['name' => 'Pedro',
+          'email' => 'pedro@gmail.com',
+          'password' => bcrypt('asdfasdf'),
+          'admin' => false]
+        );
 
     }
 }

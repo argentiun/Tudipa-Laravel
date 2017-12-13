@@ -53,17 +53,44 @@
                       </a>
 
                       <ul class="dropdown-menu">
-                          <li>
-                              <a href="{{ route('logout') }}"
-                                  onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                  Cerrar Sesión
-                              </a>
 
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                  {{ csrf_field() }}
-                              </form>
-                          </li>
+													<li>
+														<a href="/user/profile">
+																Mi Perfil
+														</a>
+													</li>
+													<li>
+														<a href="/products">
+																@if (Auth::user()->admin)
+																	Listado de cursos
+																@else
+																	Cursos creados
+																@endif
+														</a>
+													</li>
+													@if (!Auth::user()->admin)
+														<li>
+															<a href="/products/bought">
+																Cursos comprados
+															</a>
+														</li>
+														<li>
+															<a href="/cart/view">
+																Mi carrito
+															</a>
+														</li>
+													@endif
+													<li>
+															<a href="{{ route('logout') }}"
+																	onclick="event.preventDefault();
+																					 document.getElementById('logout-form').submit();">
+																	Cerrar Sesión
+															</a>
+
+															<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+																	{{ csrf_field() }}
+															</form>
+													</li>
                       </ul>
                   </li>
               @endguest
