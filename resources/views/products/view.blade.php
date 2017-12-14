@@ -18,7 +18,7 @@
 
 
 
-  <div class="text-center" style="margin-bottom: 20px;">
+  <div class="text-center" style="margin-bottom: 90px;">
 
     <h2 class="title" style="color: #ff0088;">{{ $product->name }}</h2>
 
@@ -28,11 +28,12 @@
           <div class="team-player">
               <img src="{{ $product->images()->first()->image }}" alt="Thumbnail Image" class="img-raised img-rounded img-raised">
               <br>
+              <br>
               <h5 class="text-muted">{{ $product->category->name }}</h5>
 
                <p class="description">{{ $product->description }}</p>
                <p class="description">{{ $product->long_description }}</p>
-               <h4 class="description">Precio: ${{ $product->price }}</h4>
+               <h4 class="description" style="margin-top: 20px; margin-bottom: 30px;">Precio: ${{ $product->price }}</h4>
                @if (!Auth::user()->admin)
                  @if (Session::get('cart') && in_array($product->id, Session::get('cart')))
                    <a class="btn btn-danger" href="/cart/remove/{{ $product->id }}">Sacar del carrito</a>
