@@ -23,7 +23,8 @@
 </head>
 
 <body class="@yield('body-class')">
-	<nav class="navbar navbar-info navbar-fixed-top">
+	<nav class= "@if (isset($_COOKIE['clases'])) {{$_COOKIE['clases']}} @else {{"navbar navbar-info navbar-fixed-top"}} @endif"
+		 id= "background">
     	<div class="container">
         	<!-- Brand and toggle get grouped for better mobile display -->
         	<div class="navbar-header">
@@ -136,5 +137,7 @@
 
 	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 	<script src="{{asset ('/js/material-kit.js') }}" type="text/javascript"></script>
+
+	<script src="{{asset ('/js/theme.js') }}" type="text/javascript"></script>
 
 </html>

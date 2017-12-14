@@ -39,7 +39,23 @@
                         <p>{{date('d-m-Y', strtotime(Auth::user()->created_at))}}</p>
 	                </div>
 
-        					
+									<label for="">Elegi tu Tema
+        <select id="theme">
+          {{-- navbar-danger --}}
+            <option value="rojo">Rojo</option>
+          {{-- navbar-inverse --}}
+            <option value="violeta">Violeta</option>
+          {{-- navbar-info --}}
+            <option value="azul" selected >Azul</option>
+          {{-- navbar-warning --}}
+            <option value="amarillo">Amarillo</option>
+          {{-- navbar-success --}}
+            <option value="verde">Verde</option>
+
+        </select>
+        </label>
+
+
 
                   <br>
                   <br>
