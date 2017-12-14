@@ -16,20 +16,20 @@
               <h4>Tudipa es una amplia comunidad dedicada a la enseñanza y aprendizaje de cursos online. Nuclea profesionales y alumnos en un solo sitio,
               donde se hace un lugar ameno para estudiar y compartir conocimientos con los demás.</h4>
               <br/>
-              <a href="{{ route('register') }}" class="btn btn-info btn-raised btn-lg">
+              <!-- <a href="{{ route('register') }}" class="btn btn-info btn-raised btn-lg">
                 Quiero estudiar
               </a>
 
               <a href="{{ route('register') }}" class="btn btn-info btn-raised btn-lg">
                 Quiero Instruir
-              </a>
+              </a> -->
 
             </div>
         </div>
     </div>
 </div>
 
-<div class="main main-raised" style="margin: 0px 0px 0px; border-radius: 0px;">
+<div class="main main-raised">
 <div class="container">
   <div class="section text-center section-landing">
           <div class="row">
@@ -86,14 +86,15 @@
   <div class="team">
     <div class="row">
       @foreach ($products as $product)
-      <div class="col-md-4">
-          <div class="team-player">
+      <div class="col-xs-6 col-md-4">
+          <div class="team-player" style="border-radius: 8px;;background-color: #fffefe; padding-bottom: 15px;padding-top: 15px;
+          margin-bottom: 15px; margin-top: 15px; box-shadow: 1px -1px 38px -12px rgba(0, 0, 0, 0.08), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); height: 440px;">
               <img src="{{ $product->images()->first()->image }}" alt="Thumbnail Image" class="img-raised img-circle">
                 <h4 class="title">{{ $product->name }} <br />
                   <small class="text-muted">{{ $product->category->name }}</small>
                 </h4>
                <p class="description">{{ $product->description }}</p>
-               <a class="btn" href="/products/view/{{ $product->id }}">Ver</a>
+               <a class="btn btn-success" href="/products/view/{{ $product->id }}">Ver</a>
           </div>
       </div>
 

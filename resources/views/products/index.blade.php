@@ -40,7 +40,7 @@
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
-                        <a href="#" type="button" rel="tooltip" title="Ver curso" class="btn btn-info btn-simple btn-xs">
+                        <a href="/products/view/{{ $product->id }}" type="button" rel="tooltip" title="Ver curso" class="btn btn-info btn-simple btn-xs">
                             <i class="fa fa-info"></i>
                         </a>
 
