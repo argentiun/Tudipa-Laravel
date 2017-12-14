@@ -16,12 +16,20 @@ class UsersTableSeeder extends Seeder
     {
         User::create(
           ['name' => 'Pablo',
+          'lastname' => 'Lalala',
+          'dateB' => '1990-06-18',
+          'country' => 'Argentina',
+          'province' => 'Buenos Aires',
           'email' => 'pablo@gmail.com',
           'password' => bcrypt('asdfasdf'),
           'admin' => true]
         );
         User::create(
           ['name' => 'Pedro',
+          'lastname' => 'Trala',
+          'dateB' => '1996-05-09',
+          'country' => 'Argentina',
+          'province' => 'Buenos Aires',
           'email' => 'pedro@gmail.com',
           'password' => bcrypt('asdfasdf'),
           'admin' => false]
