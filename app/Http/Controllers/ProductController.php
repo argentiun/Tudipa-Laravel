@@ -136,7 +136,7 @@ class ProductController extends Controller
 
     // cursos comprados
     public function bought() {
-      $products = auth()->user()->productsBought()->paginate(10);
+      $products = auth()->user()->productsBought()->paginate(15);
       return view('products.bought', compact('products'));
     }
 }

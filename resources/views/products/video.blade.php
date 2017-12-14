@@ -15,14 +15,7 @@
                   <h2 class="title">{{ $product->category->name }}</h2>
                   <h4 class="description">{{ $product->description }}</h4>
                   <br>
-                  <iframe width="700" height="400" src="https://www.youtube.com/embed/{{$product->video}}" style="position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden; position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;"></iframe>
+                  <iframe width="700" height="400" src="https://www.youtube.com/embed/{{$product->video}}" style="overflow: hidden; top:0; left: 0; width: 100%; height: 450px;"></iframe>
                   <br>
                   <br>
                   <div class="text-center">
