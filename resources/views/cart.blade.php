@@ -5,10 +5,11 @@
 @section('body-class', 'product-page')
 
 @section('content')
+<div class="header header-filter" style="background-image: url('{{ ('https://images.pexels.com/photos/697059/pexels-photo-697059.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') }}');"></div>
 <div class="main main-raised" style="margin: 0px 0px 0px; border-radius: 0px;">
 <div class="container">
 
-  <div class="section text-center" style="padding: 100px 0;">
+  <div class="text-center" style="margin-bottom: 110px;">
 
     <h2 class="title">Carrito de Compras</h2>
 
