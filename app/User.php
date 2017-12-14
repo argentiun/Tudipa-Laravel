@@ -14,9 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ['name', 'lastname', 'dateB', 'country', 'province',  'email', 'password'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -36,5 +34,5 @@ class User extends Authenticatable
     public function productsBought() {
       return $this->belongsToMany(Product::class, 'users_products');
     }
-    
+
 }

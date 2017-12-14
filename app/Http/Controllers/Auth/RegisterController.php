@@ -47,12 +47,27 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
-    }
+      return Validator::make($data, [
+          'name' => 'required|string|max:255',
+          'lastname' => 'required|string|max:255',
+          'dateB' => 'required',
+          'country' => 'required|string',
+          'province' => 'required_if:country,1',
+          'email' => 'required|string|email|max:255|unique:users',
+          'password' => 'required|string|min:6|confirmed',
+
+      ],
+      [
+        'name.required'=> 'El campo Nombre es requerido.',
+        'lastname.required'=> 'El campo Apellido es requerido.',
+        'dateB.required'=> 'El campo Fecha de Nacimiento es requerido.',
+        'country.required' => 'El campo País de Residencia es requerido.',
+        'email.required'=> 'El campo Email es requerido.',
+        'password.required'=> 'El campo Contraseña es requerido.',
+        'password_confirmation.required'=> 'El campo Repetir Contraseña es requerido.'
+
+      ]);
+  }
 
     /**
      * Create a new user instance after a valid registration.
@@ -62,10 +77,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
+      return User::create([
+          'name' => $data['name'],
+          'lastname' => $data['lastname'],
+          'dateB' => $data['dateB'],
+          'country' => $data['country'],
+          'province' => ( !isset($data['province'])? '': $data['province'] ),
+          'email' => $data['email'],
+          'password' => bcrypt($data['password']),
+      ]);
+  }
 }
