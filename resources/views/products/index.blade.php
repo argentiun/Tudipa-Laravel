@@ -9,11 +9,11 @@
 <div class="main main-raised" style="margin: 0px 0px 0px; border-radius: 0px;">
 <div class="container">
 
-  <div class="section text-center" style="padding: 100px 0;">
+  <div class="text-center" style="margin-bottom: 110px;">
 
     <h2 class="title">Listado de Cursos Creados</h2>
 
-  <div class="team">
+  <div class="team" style="margin-top: 0px;">
     <div class="row">
       <a href="{{ ('/products/create') }}" class="btn btn-success btn-round" style="margin-bottom: 100px;">Crear Curso</a>
       <br/>

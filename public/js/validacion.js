@@ -21,7 +21,7 @@ var contraseña2 = form.password_confirmation;
 form.onsubmit = function (e) {
   var campos = form.elements;
   for (var i = 0; i < campos.length; i++) {
-    if(campos[i].tagName != 'BUTTON'){
+    if(campos[i].tagName != 'BUTTON' && campos[i].name != 'province'){
       if(campos[i].value.trim() === ''){
         console.log(campos[i]);
         e.preventDefault();
