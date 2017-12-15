@@ -105,6 +105,17 @@
   {{ $products->links() }}
   </div>
 
+<div class="container">
+  <div class="row">
+    <ul class="rslides">
+      <li><img src="{{ ('img/fondo-1.jpg') }}" alt=""></li>
+      <li><img src="{{ ('img/fondo-2.jpg') }}" alt=""></li>
+      <li><img src="{{ ('img/fondo-3.jpg') }}" alt=""></li>
+      <li><img src="{{ ('img/fondo-4.jpg') }}" alt=""></li>
+      <li><img src="{{ ('img/fondo-5.jpg') }}" alt=""></li>
+    </ul>
+  </div>
+</div>
 
     <div class="section landing-section">
           <div class="row">

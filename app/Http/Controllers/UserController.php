@@ -26,13 +26,13 @@ class UserController extends Controller
     return redirect('/user/profile');
   }
 
-  public function edit($id){
-    $user = User::find($id);
+  public function edit(){
+    $user = auth()->user();
     return view('editprofile')->with(compact('user'));
   }
 
-  public function update(Request $request, $id){
-    $user = User::find($id);
+  public function update(Request $request){
+    $user = auth()->user();
     $user->fill($request->all());
     // dd($user);
     $user->save();

@@ -50,7 +50,7 @@
 	                </div>
 
 									<div class="text-center">
-				            <a href="" class="btn btn-success text-center">Editar mis datos</a>
+				            <a href="/user/profile/edit" class="btn btn-success text-center">Editar mis datos</a>
 				          </div>
 
 									<div class="dropdown text-center">

@@ -23,7 +23,7 @@
                 </div>
         @endif
 
-        <form class="" action="{{ url('/user/profile/'.$user->id.'/edit') }}" method="post">
+        <form class="" action="{{ url('/user/profile/edit') }}" method="post">
           {{ csrf_field() }}
           {{ method_field('PUT') }}
 

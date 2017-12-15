@@ -20,6 +20,40 @@
   <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" />
   <link href="{{ asset('/css/material-kit.css') }}" rel="stylesheet"/>
 
+	<style media="screen">
+		.rslides {
+		position: relative;
+		list-style: none;
+		overflow: hidden;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		}
+
+		.rslides li {
+		-webkit-backface-visibility: hidden;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0;
+		top: 0;
+		}
+
+		.rslides li:first-child {
+		position: relative;
+		display: block;
+		float: left;
+		}
+
+		.rslides img {
+		display: block;
+		height: auto;
+		float: left;
+		width: 100%;
+		border: 0;
+		}
+	</style>
+
 </head>
 
 <body class="@yield('body-class')">
@@ -139,5 +173,17 @@
 	<script src="{{asset ('/js/material-kit.js') }}" type="text/javascript"></script>
 
 	<script src="{{asset ('/js/theme.js') }}" type="text/javascript"></script>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="{{asset ('/js/responsiveslides.js') }}"></script>
+
+	<script>
+  $(function() {
+    $(".rslides").responsiveSlides();
+  });
+</script>
+
+
 
 </html>
