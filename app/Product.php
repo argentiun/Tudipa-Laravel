@@ -52,6 +52,6 @@ class Product extends Model
         }
 
         // default
-        return '/images/default.png';
+        return '/images/products/default.png';
     }
 }
