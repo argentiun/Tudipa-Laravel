@@ -8,4 +8,3 @@
 #### - Francisco Maffi Casal
 #### - Eduardo Dorado
 #### - Tomas Rodriguez
-#### - Matias Galarza Leal
