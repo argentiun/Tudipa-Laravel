@@ -18,7 +18,9 @@ Route::middleware('auth')->group(function () {
 
 
     //Perfil de usuario
-    Route::get('/user/profile', 'UserController@profile');
+    Route::get('/user/profile', 'UserController@profile')->name('tu_perfil');
+    Route::get('/user/profile/{id}/edit', 'UserController@edit');
+    Route::put('/user/profile/{id}/edit', 'UserController@update');
     Route::post('/user/image', 'UserController@saveImage');
 
     // Carrito

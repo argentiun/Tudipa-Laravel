@@ -29,33 +29,47 @@
                           </form>
 
 	                        <div class="name">
-	                            <h3 class="title">{{Auth::user()->name}}</h3>
-								              <h6>{{Auth::user()->email}}</h6>
+	                            <h3 class="title">{{Auth::user()->name}} {{Auth::user()->lastname}}</h3>
+								              <h6><strong>{{Auth::user()->email}}</strong></h6>
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="description text-center">
-                        <p>Fecha de ingreso</p>
+                        <p><strong>Nacionalidad</strong></p>
+                        <p>{{Auth::user()->country}}</p>
+	                </div>
+
+									<div class="description text-center">
+                        <p><strong>Fecha de Nacimiento</strong></p>
+                        <p>{{date('d-m-Y', strtotime(Auth::user()->dateB))}}</p>
+	                </div>
+
+									<div class="description text-center">
+                        <p><strong>Fecha de Ingreso</strong></p>
                         <p>{{date('d-m-Y', strtotime(Auth::user()->created_at))}}</p>
 	                </div>
 
-									<label for="">Elegi tu Tema
-        <select id="theme">
-          {{-- navbar-danger --}}
-            <option value="rojo">Rojo</option>
-          {{-- navbar-inverse --}}
-            <option value="violeta">Violeta</option>
-          {{-- navbar-info --}}
-            <option value="azul" selected >Azul</option>
-          {{-- navbar-warning --}}
-            <option value="amarillo">Amarillo</option>
-          {{-- navbar-success --}}
-            <option value="verde">Verde</option>
+									<div class="text-center">
+				            <a href="" class="btn btn-success text-center">Editar mis datos</a>
+				          </div>
 
-        </select>
-        </label>
+									<div class="dropdown text-center">
+										<label class="btn"for="" style="background-color: #f0eeee; color: #666161;"> <strong>Elegí el color de tu Tema</strong>
+								        <select class="btn" id="theme" style="margin-left: 20px; background-color: #868383; color: #ffffff;">
+								          {{-- navbar-danger --}}
+								            <option value="rojo">Rojo</option>
+								          {{-- navbar-inverse --}}
+								            <option value="violeta">Violeta</option>
+								          {{-- navbar-info --}}
+								            <option value="azul" selected >Azul</option>
+								          {{-- navbar-warning --}}
+								            <option value="amarillo">Amarillo</option>
+								          {{-- navbar-success --}}
+								            <option value="verde">Verde</option>
 
-
+								        </select>
+						        </label>
+									</div>
 
                   <br>
                   <br>
