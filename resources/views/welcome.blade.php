@@ -108,11 +108,11 @@
   <div class="container" style=" width: 100%; padding-left: 0px; padding-right: 0px;">
     <div class="row" style=" margin-left: -100px; margin-right: -100px;">
       <ul class="rslides">
-        <li><img src="{{ ('img/fondo-3.jpg') }}" alt=""></li>
-        <li><img src="{{ ('img/fondo-2.jpg') }}" alt=""></li>
-        <li><img src="{{ ('img/fondo-1.jpg') }}" alt=""></li>
-        <li><img src="{{ ('img/fondo-4.jpg') }}" alt=""></li>
-        <li><img src="{{ ('img/fondo-5.jpg') }}" alt=""></li>
+        <li><img src="{{ ('img/slider1.jpg') }}" alt=""></li>
+        <li><img src="{{ ('img/slider2.jpg') }}" alt=""></li>
+        <li><img src="{{ ('img/slider3.jpg') }}" alt=""></li>
+        <li><img src="{{ ('img/slider4.jpg') }}" alt=""></li>
+        <li><img src="{{ ('img/slider5.jpg') }}" alt=""></li>
       </ul>
     </div>
   </div>
