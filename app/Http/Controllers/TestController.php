@@ -21,4 +21,13 @@ class TestController extends Controller
       // $data['var2'] = $var2;
       // return view('welcome')->with($data);
     }
+
+    public function course()
+    {
+        $products = Product::paginate(15);
+
+      return view('cursos')->with(compact('products'));
+
+    }
+
 }

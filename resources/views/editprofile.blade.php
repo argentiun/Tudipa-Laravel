@@ -2,14 +2,14 @@
 
 @section('title', 'Editar Perfil de Usuario - Tudipa')
 
-@section('body-class', 'landing-page')
+@section('body-class', 'profile-page')
 
 @section('content')
-
+<div class="header header-filter" style="background-image: url('{{ ('https://images.pexels.com/photos/7354/startup-photos.jpg?w=1260&h=750&auto=compress&cs=tinysrgb') }}');"></div>
   <div class="main main-raised" style="margin: 0px 0px 0px; border-radius: 0px;">
     <div class="container">
 
-      <div class="section">
+      <div class="text-center" style="margin-bottom: 40px;">
 
         <h2 class="title text-center" style="padding: 10px 0;">Editar Perfil</h2>
 

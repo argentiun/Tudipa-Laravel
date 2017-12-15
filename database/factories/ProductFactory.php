@@ -11,7 +11,7 @@ $factory->define(Product::class, function (Faker $faker) {
       'long_description' => $faker->text, // Nos devuelve un texto.
       'price' => $faker->randomFloat(2, 5, 3000), //Nos genera dos decimales, el tercer parametro es para que no valga mas que eso.
       'user_id' => 1,
-      'video' => 'https://www.youtube.com/watch?v=sCaSpqLT_kg',
+      'video' => 'https://www.youtube.com/embed/7QbAA9zNX2I',
       'category_id' => $faker->numberBetween(1, 5) // De una a 5 categorias.
     ];
 });

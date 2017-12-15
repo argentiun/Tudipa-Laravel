@@ -47,10 +47,50 @@
 
 		.rslides img {
 		display: block;
-		height: auto;
+		height: 300px;
 		float: left;
 		width: 100%;
 		border: 0;
+		}
+
+		.panel-group .panel {
+				margin-top: 40px;
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+				box-shadow: 1px -1px 38px -12px rgba(0, 0, 0, 0.08), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #fbfbfb;
+        border-color: #EEEEEE;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #f8f8f8;;
+    }
+
+		.demo {
+		    padding-top: 60px;
+		    padding-bottom: 60px;
 		}
 	</style>
 
@@ -75,9 +115,9 @@
         		<ul class="nav navbar-nav navbar-right">
 
 							<li><a href="{{ ('/') }}">Inicio</a></li>
-							<li><a href="#">Cursos</a></li>
-							<li><a href="#">Enseñá</a></li>
-							<li><a href="#">Faq</a></li>
+							<li><a href="{{ ('/cursos') }}">Cursos</a></li>
+							<li><a href="{{ ('/ensena') }}">Enseñá</a></li>
+							<li><a href="{{ ('/faq') }}">Faq</a></li>
               @guest
                   <li><a href="{{ route('login') }}">Ingresar</a></li>
                   <li><a href="{{ route('register') }}">Registrase</a></li>
@@ -158,10 +198,21 @@
 
 
 </body>
+
+
 	<!--   Core JS Files   -->
 	<script src="{{asset ('/js/jquery.min.js') }}" type="text/javascript"></script>
 	<script src="{{asset ('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 	<script src="{{asset ('/js/material.min.js') }}"></script>
+
+
+	<script src="{{asset ('/js/responsiveslides.js') }}"></script>
+
+	<script>
+	$(function() {
+		$(".rslides").responsiveSlides();
+	});
+	</script>
 
 	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
 	<script src="{{asset ('/js/nouislider.min.js') }}" type="text/javascript"></script>
@@ -175,14 +226,7 @@
 	<script src="{{asset ('/js/theme.js') }}" type="text/javascript"></script>
 
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="{{asset ('/js/responsiveslides.js') }}"></script>
 
-	<script>
-  $(function() {
-    $(".rslides").responsiveSlides();
-  });
-</script>
 
 
 

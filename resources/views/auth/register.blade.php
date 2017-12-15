@@ -51,6 +51,7 @@
                   <i class="material-icons">event</i>
                 </span>
                 <input id="dateB" type="date" class="form-control" placeholder="Fecha de Nacimiento" name="dateB" value="{{ old('dateB') }}" required>
+                <br/>
                 <span class="error"></span>
 
                 @if ($errors->has('dateB'))
@@ -64,7 +65,7 @@
                 <span class="input-group-addon">
                   <i class="material-icons">place</i>
                 </span>
-                <div class="col-md-6">
+
                   <select name="country" id="pais" placeholder="País de Residencia"></select>
                   <span class="error"></span>
                   @if ($errors->has('country'))
@@ -72,12 +73,12 @@
                          <strong>{{ $errors->first('country') }}</strong>
                      </span>
                  @endif
-                </div>
+
               </div>
 
               <div class="input-group{{ $errors->has('province') ? ' has-error' : '' }}">
                 <span class="input-group-addon" style="display:none" id="label-prov">
-                  <i class="material-icons">place</i>
+
                 </span>
                 <div class="col-md-6">
                   <select name="province" id="tudi" style="display:none"></select>
