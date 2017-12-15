@@ -40,7 +40,7 @@ for (var i = 0; i < campos.length; i++) {
     // this.className = '';
     var error = this.nextElementSibling;
   	if (this.value === '') {
-  		this.className = 'errores';
+  		// this.className = 'errores';
   		error.innerText = 'Debes completar este campo.';
   	} else if (this.name == 'email') {
   	  if (!regexMail.test(this.value)) {
@@ -50,7 +50,7 @@ for (var i = 0; i < campos.length; i++) {
   	  }
   	 } else {
   		  error.innerText = '';
-  		  this.className = '';
+  		  // this.className = '';
   	 }
     });
   }
