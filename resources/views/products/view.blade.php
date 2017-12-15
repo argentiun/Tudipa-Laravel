@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-md-12">
           <div class="team-player">
-              <img src="{{ $product->images()->first()->image }}" alt="Thumbnail Image" class="img-raised img-rounded img-raised">
+              <img src="{{ $product->featured_image_url }}" alt="Thumbnail Image" class="img-raised img-rounded img-raised">
               <br>
               <br>
               <h5 class="text-muted">{{ $product->category->name }}</h5>

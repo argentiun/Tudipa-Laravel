@@ -43,4 +43,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/products/bought', 'ProductController@bought'); // Cursos comprados
 
     Route::delete('/products/{id}', 'ProductController@destroy');
+
+    // Gestionar imagenes
+
+    Route::get('/products/{id}/images', 'ImageController@index');
+    Route::post('/products/{id}/images', 'ImageController@store');
+    Route::delete('/products/{id}/images', 'ImageController@destroy');
 });

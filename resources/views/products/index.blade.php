@@ -25,7 +25,7 @@
                   <th class="col-md-3 text-center">Descripción</th>
                   <th class="text-center">Categorias</th>
                   <th class="text-center">Precio</th>
-                  <th class="col-md-2 text-center">Opciones</th>
+                  <th class="col-md-3 text-center">Opciones</th>
               </tr>
           </thead>
           <tbody>
@@ -47,6 +47,10 @@
 
                         <a href="{{ url('/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar curso" class="btn btn-success btn-simple btn-xs">
                             <i class="fa fa-edit"></i>
+                        </a>
+
+                        <a href="{{ url('/products/'.$product->id.'/images') }}" rel="tooltip" title="Imagen del producto" class="btn btn-warning btn-simple btn-xs">
+                            <i class="fa fa-image"></i>
                         </a>
 
                         <button type="submit" rel="tooltip" title="Eliminar curso" class="btn btn-danger btn-simple btn-xs">
