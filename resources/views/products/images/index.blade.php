@@ -29,7 +29,9 @@
       <div class="panel panel-default" style="margin-top: 0px;">
         <div class="panel-body">
 
-          <img src="{{ $image->url}}" alt="" width="250">
+
+          <a data-fancybox="gallery" href="{{ $image->url}}"><img src="{{ $image->url}}" alt="" width="250"></a>
+
 
 
           <form  action="" method="post">

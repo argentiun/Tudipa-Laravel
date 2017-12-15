@@ -206,6 +206,12 @@
 	<script src="{{asset ('/js/material.min.js') }}"></script>
 
 
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+
+
 	<script src="{{asset ('/js/responsiveslides.js') }}"></script>
 
 	<script>
@@ -224,9 +230,6 @@
 	<script src="{{asset ('/js/material-kit.js') }}" type="text/javascript"></script>
 
 	<script src="{{asset ('/js/theme.js') }}" type="text/javascript"></script>
-
-
-
 
 
 
